@@ -1,0 +1,31 @@
+package com.company;
+
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Method;
+import java.util.*;
+
+
+public class Main {
+    public static void swap(int arr[],int i,int j){
+        if (arr[i]==arr[j]){
+            return;
+        }
+        int temp =arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    public static void main(String[]args) {
+        int arr[]={20,35,-15,7,55,1,-22};
+        for (int unsortedpartition =arr.length-1;unsortedpartition>=0;unsortedpartition--){
+            for (int i=0;i<unsortedpartition;i++){
+                if (arr[i]>arr[i+1]){
+                    swap(arr,i,i+1);
+                }
+            }
+        }
+        for (int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
